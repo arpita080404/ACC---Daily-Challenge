@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main() { 
+    int t;  //number of test case     
+    cin >> t;
+    int ans = 0;
+//integer variable ans initialized with zero
+
+//loop which run untill number is non zero
+    while (t > 0) {
+        int n;
+        cin >> n;
+        int r = n % 10;   //taking remainder of number 
+        ans = ans * 10 + r;   //creating new number by reversing the previous 
+        n = n / 10;   //making previous number smaller
+        cout << ans << endl;
+    }
+    return 0;
+}
