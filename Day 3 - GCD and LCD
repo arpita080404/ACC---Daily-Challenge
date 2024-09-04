@@ -1,0 +1,42 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int LCM(int a, int b) 
+{ 
+  int greater = max(a, b);
+  int smallest = min(a, b); 
+  for (int i = greater; ; i += greater) 
+  {
+    if (i % smallest == 0) {
+     return i; 
+     } 
+   }
+}
+
+int gcd(int a, int b) 
+{ 
+    int result = min(a, b); 
+    while (result > 0)
+  { 
+      if (a % result == 0 && b % result == 0) { 
+            break; 
+        } 
+      result--; 
+   } 
+    return result; 
+} 
+
+int main() {
+    int n1, n2; // Declare the variables n1 and n2
+    cout << "Enter 2 numbers:" << endl;
+    cin >> n1 >> n2;
+
+    int lcm_result = LCM(n1, n2); // Call LCM and store the result
+    int gcd_result = gcd(n1, n2); // Call gcd and store the result
+
+    cout << "LCM: " << lcm_result << endl; // Output the LCM
+    cout << "GCD: " << gcd_result << endl; // Output the GCD
+
+    return 0;
+}
