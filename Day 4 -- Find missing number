@@ -1,0 +1,29 @@
+//logic:- sum of n terms - sum of all elements of array 
+//gives the missing number 
+
+
+#include <iostream>
+using namespace std;
+
+int missingNumber(int n, int arr[])
+{
+    int sum = 0;
+    // Calculate the sum of array elements
+    for (int i = 0; i<(n-1); i++) {
+        sum += arr[i];
+    }
+
+    // Calculate the expected sum
+    int expectedSum = (n*(n+1))/2;
+
+    // Return missing number
+    return (expectedSum - sum);
+}
+
+int main()
+{
+    int n = 5;
+    int arr [n]= { 1, 4, 3, 5 };
+    cout << missingNumber(n,arr);
+    return 0;
+}
